@@ -1,0 +1,14 @@
+A B C D E F G H *
+A 1 B
+B 2 C
+C 3 A
+C 1 D
+D 4 E
+E 3 F
+F 10 G
+G 11 H
+H 1 A
+A 1 E
+A 2 G
+B 19 G
+B 2 D
