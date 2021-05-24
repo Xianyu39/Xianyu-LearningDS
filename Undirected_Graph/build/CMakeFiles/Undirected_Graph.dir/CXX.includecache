@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Edge.h
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/src/Edge.cpp
+Edge.h
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/src/Edge.h
+

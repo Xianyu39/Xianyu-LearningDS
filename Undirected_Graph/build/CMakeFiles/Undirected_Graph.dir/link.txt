@@ -1,0 +1,3 @@
+D:\pspro\cmake-3.19.2-win64-x64\cmake-3.19.2-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\Undirected_Graph.dir/objects.a
+D:\pspro\mingw64\mingw64\bin\ar.exe cr CMakeFiles\Undirected_Graph.dir/objects.a @CMakeFiles\Undirected_Graph.dir\objects1.rsp
+D:\pspro\mingw64\mingw64\bin\g++.exe -g -shared -o bin\libUndirected_Graph.dll -Wl,--out-implib,bin\libUndirected_Graph.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\Undirected_Graph.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\Undirected_Graph.dir\linklibs.rsp

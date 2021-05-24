@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe -DUndirected_Graph_EXPORTS @CMakeFiles/Undirected_Graph.dir/includes_CXX.rsp -g -o CMakeFiles\\Undirected_Graph.dir\\src\\Edge.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Undirected_Graph\\src\\Edge.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/src/Edge.cpp"
+},
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Undirected_Graph\\main.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/main.cpp"
+}
+]

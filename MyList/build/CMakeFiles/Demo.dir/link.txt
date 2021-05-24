@@ -1,0 +1,3 @@
+D:\pspro\cmake-3.19.2-win64-x64\cmake-3.19.2-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\Demo.dir/objects.a
+D:\pspro\mingw64\mingw64\bin\ar.exe cr CMakeFiles\Demo.dir/objects.a @CMakeFiles\Demo.dir\objects1.rsp
+D:\pspro\mingw64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Demo.dir/objects.a -Wl,--no-whole-archive -o ..\bin\Demo.exe -Wl,--out-implib,..\bin\libDemo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Demo.dir\linklibs.rsp

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/MyList/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/Demo.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Demo.dir\\main.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\MyList\\main.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/MyList/main.cpp"
+}
+]

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Edge.h
+
+../include/Undirected_Graph.hpp
+Edge.h
+../include/Edge.h
+Vertex.hpp
+../include/Vertex.hpp
+vector
+-
+fstream
+-
+iostream
+-
+
+../include/Vertex.hpp
+Edge.h
+../include/Edge.h
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/main.cpp
+Undirected_Graph.hpp
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Undirected_Graph/Undirected_Graph.hpp
+iostream
+-
+

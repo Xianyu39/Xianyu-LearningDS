@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/MyList/include/List.hpp
+iostream
+-
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/MyList/main.cpp
+include/List.hpp
+D:/pspro/C_C++_pro/DataStructure_Algorithms/MyList/include/List.hpp
+string
+-
+
