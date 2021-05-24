@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Graph_Algorithm/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe -DGraph_Algorithms_EXPORTS @CMakeFiles/Graph_Algorithms.dir/includes_CXX.rsp -g -o CMakeFiles\\Graph_Algorithms.dir\\src\\i.cxx.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Graph_Algorithm\\src\\i.cxx",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Graph_Algorithm/src/i.cxx"
+},
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Graph_Algorithm/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/Main.dir/includes_CXX.rsp -g -o CMakeFiles\\Main.dir\\Main.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Graph_Algorithm\\Main.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Graph_Algorithm/Main.cpp"
+}
+]
