@@ -14,5 +14,3 @@ add_executable(Demo ${PROJECT_SOURCE_DIR}/Demo.cpp)
 # Linking
 target_include_directories(Demo PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(Demo HashTable)
-
-# is it really added in????
