@@ -1,0 +1,2 @@
+D:\pspro\mingw64\mingw64\bin\ar.exe qc libHuffmanTree.a CMakeFiles/HuffmanTree.dir/HuffmanTree.cpp.obj CMakeFiles/HuffmanTree.dir/Node.cpp.obj
+D:\pspro\mingw64\mingw64\bin\ranlib.exe libHuffmanTree.a

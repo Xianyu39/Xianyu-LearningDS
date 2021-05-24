@@ -1,0 +1,17 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/HuffmanCoding.dir/includes_CXX.rsp -g -o CMakeFiles\\HuffmanCoding.dir\\main.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\HuffmanTree\\main.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/main.cpp"
+},
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/HuffmanTree.dir/includes_CXX.rsp -g -o CMakeFiles\\HuffmanTree.dir\\src\\HuffmanTree.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\HuffmanTree\\src\\HuffmanTree.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/HuffmanTree.cpp"
+},
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/HuffmanTree.dir/includes_CXX.rsp -g -o CMakeFiles\\HuffmanTree.dir\\src\\Node.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\HuffmanTree\\src\\Node.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/Node.cpp"
+}
+]

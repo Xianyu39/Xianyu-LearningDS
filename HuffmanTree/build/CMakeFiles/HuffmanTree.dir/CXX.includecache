@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/HuffmanTree.h
+Node.h
+../include/Node.h
+string
+-
+fstream
+-
+list
+-
+iterator
+-
+iostream
+-
+
+../include/Node.h
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/HuffmanTree.cpp
+HuffmanTree.h
+D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/HuffmanTree.h
+map
+-
+iostream
+-
+algorithm
+-
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/Node.cpp
+Node.h
+D:/pspro/C_C++_pro/DataStructure_Algorithms/HuffmanTree/src/Node.h
+
