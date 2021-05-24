@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Hash.hpp
+iostream
+-
+Table.hpp
+-
+
+../include/HashTable.h
+Table.hpp
+../include/Table.hpp
+Hash.hpp
+../include/Hash.hpp
+
+../include/Table.hpp
+iostream
+-
+Hash.hpp
+../include/Hash.hpp
+
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/Demo.cpp
+HashTable.h
+D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/HashTable.h
+

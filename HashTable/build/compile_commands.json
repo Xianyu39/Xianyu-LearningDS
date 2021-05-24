@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe -DHashTable_EXPORTS  -g -o CMakeFiles\\HashTable.dir\\src\\i.cxx.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Xianyu-LearningDS\\HashTable\\src\\i.cxx",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/src/i.cxx"
+},
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/Demo.dir/includes_CXX.rsp -g -o CMakeFiles\\Demo.dir\\Demo.cpp.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Xianyu-LearningDS\\HashTable\\Demo.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/HashTable/Demo.cpp"
+}
+]
