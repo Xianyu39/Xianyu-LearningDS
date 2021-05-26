@@ -2,7 +2,7 @@
 #define __HASH_HPP__
 
 #include <iostream>
-#include "Table.hpp"
+// #include "Table.hpp"
 #include <string>
 
 using std::cout;
