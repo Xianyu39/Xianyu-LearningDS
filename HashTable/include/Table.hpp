@@ -8,6 +8,24 @@ using std::cout;
 using std::endl;
 using Num = unsigned long;
 
+template<typename Key, typename Value>
+class HashTable;
+
+template<typename Key, typename Value>
+class HashNode {
+    friend class HashTable<Key, Value>;
+
+private:
+    Key* key;
+    Value* val;
+    HashNode* next;
+
+    HashNode(Key* key = nullptr,
+        Value* val = nullptr,
+        HashNode* next = nullptr)
+        :key(key), val(val), next(next) {}
+};
+
 /**
  * @brief Hashtable, using chaining method to deal with collision.
  * @param Key key type ,you can search the values fastly by key.
@@ -16,12 +34,12 @@ using Num = unsigned long;
 template<typename Key, typename Value>
 class HashTable {
 private:
-    Num _tableSize;
+    Num tableSize;
     Hash<Key> hash;
 
-
 public:
-    HashTable() {}
+    HashTable(Hash<Key>& hash, Num size = 10) :tableSize(size), hash(hash) {}
+    HashTable(Num size = 10) :tableSize(size), hash() { cout << "Done" << endl; }
 
 };
 

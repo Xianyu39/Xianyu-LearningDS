@@ -2,7 +2,8 @@
 #define __HASH_HPP__
 
 #include <iostream>
-#include <Table.hpp>
+#include "Table.hpp"
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -15,13 +16,12 @@ using Num = unsigned long;
 */
 template<typename Key>
 class Hash {
-    template<typename T>
-    friend class HashTable<Key, T>;
-    virtual Num operator()(const Key& key) {
-        return 1;
+public:
+    virtual Num operator()(const Key& key, Num tableSize) {
+        return key % tableSize;
     }
 
-    Hash(){}
+    Hash() {}
 };
 
 #endif

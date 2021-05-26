@@ -10,6 +10,8 @@
 iostream
 -
 Table.hpp
+../include/Table.hpp
+string
 -
 
 ../include/HashTable.h
