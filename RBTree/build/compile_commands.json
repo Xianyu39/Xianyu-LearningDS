@@ -1,0 +1,7 @@
+[
+{
+  "directory": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/RBTree/build",
+  "command": "D:\\pspro\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/Demo.dir/includes_CXX.rsp -g -o CMakeFiles\\Demo.dir\\Main.obj -c D:\\pspro\\C_C++_pro\\DataStructure_Algorithms\\Xianyu-LearningDS\\RBTree\\Main.cpp",
+  "file": "D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/RBTree/Main.cpp"
+}
+]
