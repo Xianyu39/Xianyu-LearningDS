@@ -22,13 +22,13 @@ template<class Tp>
 class RBTree;
 
 // Contains the information about red node style, which is used to visualizing.
-const string redNodeMessage("bgcolor=red fontcolor=white,");
+const string redNodeMessage("style=\"filled\",fillcolor=\"red\", fontcolor=white,");
 
 // Contains the information about black node style, which is used to visualizing.
-const string blackNodeMessage("bgcolor=black fontcolor=white,");
+const string blackNodeMessage("style=\"filled\",fillcolor=\"black\", fontcolor=white,");
 
 // NIL node style, add a name before it to generate a NIL node.
-const string nilMessage("[bgcolor=black, shape=box, fontcolor=white, width=0.4, height=0.2,label=\"NIL\"]");
+const string nilMessage("[style=\"filled\",fillcolor=\"black\", shape=box, fontcolor=white, width=0.4, height=0.2,label=\"NIL\"]");
 
 /**
  *@brief Generating a set of unique numbers to distinguish nodes.
@@ -128,24 +128,24 @@ private:
 
         // Generating root node and connecting it and its parent if it has.
         if (root == this->root) {
-            os << root->toString() << endl;
+            os << '\t' << root->toString() << endl;
         }
         else {
-            os << root->toString() << endl;
-            os << root->parent->id << "->" << root->id << endl;
+            os << '\t' << root->toString() << endl;
+            os << '\t' << root->parent->id << "->" << root->id << endl;
         }
 
         // Visualizing 2 subtrees if root and using NIL as leaves.
         if (root->left != &nil) { visualize_walk(root->left, os); }
         else {
-            os << "nil" << nil_code << nilMessage << endl;
-            os << root->id << "->" << "nil" << nil_code << nilMessage << endl;
+            os << '\t' << "nil" << nil_code << nilMessage << endl;
+            os << '\t' << root->id << "->" << "nil" << nil_code << nilMessage << endl;
             ++nil_code;
         }
         if (root->right != &nil) { visualize_walk(root->right, os); }
         else {
-            os << "nil" << nil_code << nilMessage << endl;
-            os << root->id << "->" << "nil" << nil_code << nilMessage << endl;
+            os << '\t' << "nil" << nil_code << nilMessage << endl;
+            os << '\t' << root->id << "->" << "nil" << nil_code << nilMessage << endl;
             ++nil_code;
         }
     }
@@ -287,11 +287,89 @@ public:
         }
     }
 
+    Node<Tp>* find(const Tp& key) {
+        Node<Tp>* p{ root };
+        while (p->key != key && p != &nil) {
+            if (p->key > key) { p = p->left; }
+            if (p->key < key) { p = p->right; }
+        }
+        return p;
+    }
+
+    Node<Tp>* backNode(Node<Tp>* key) {
+        if (key->right != &nil) {
+            Node<Tp>* p = key;
+            while (p->left != &nil) { p = p->left; }
+            return p;
+        }
+        else {
+            Node<Tp>* p = key->parent;
+            while (p != &nil && key == p->right) {
+                key = p;
+                p = p->parent;
+            }
+            return p;
+        }
+    }
+
+    void remove(const Tp& key) {
+        // Transform key to node*
+        Node<Tp>* target = find(key);
+        if (target == &nil) { throw "Delete value is not found."; }
+
+        // rmv_val is the name of the truly deleted node.
+        Node<Tp>* rmv_val;
+
+        // Distinguish case 1,2 and case 3.
+        if (target->left != &nil && target->right != &nil) { rmv_val = backNode(target); }
+        else { rmv_val = target; }
+
+        // Remove rmv_val from the tree.
+        Node<Tp>* child;
+        if (rmv_val->left != &nil) { child = rmv_val->left; }
+        else { child = rmv_val->right; }
+        if (child != &nil) { child->parent = rmv_val->parent; }
+
+        if (rmv_val->parent == &nil) { root = child; }
+        else if (rmv_val == rmv_val->parent->left) { rmv_val->parent->left = child; }
+        else { rmv_val->parent->right = child; }
+
+        // Case 3
+        if (rmv_val != target) {
+            target->key = rmv_val->key;
+            target->id = rmv_val->id;
+            target->num = rmv_val->num;
+            target->color = rmv_val->color;
+        }
+
+        // fix
+        if (rmv_val->color == BLACK) { DeleteFixup(child); }
+
+        delete rmv_val;
+    }
+
+    void DeleteFixup(Node<Tp>* key) {
+        while (key != root && key->color == BLACK) {
+            if (key == key->parent->left) {
+                Node<Tp>* brother = key->parent->right;
+                if (brother->color == RED) {
+                    
+                }
+            }
+            else{}
+        }
+
+        key->color = BLACK;
+    }
+
     void test() {
+        // Pre successor
+        // remove(19);
+        
         // Visualizing script.
         std::ofstream os;
         // LeftRotate(root->right);
-        os.open("D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/RBTree/Test.dot", std::ios::trunc);
+        os.open("D:/pspro/C_C++_pro/DataStructure_Algorithms/Xianyu-LearningDS/RBTree/VS.dot", std::ios::trunc);
         visualize(os);
     }
 
@@ -304,8 +382,8 @@ public:
             throw "Open visualizing script file failed.";
             std::cerr << "Open visualizing script file failed.";
         }
-        os << "digraph{\n";
-        os << "label=\"Red-black Tree\"" << endl;
+        os << "digraph {\n";
+        os << "\tlabel=\"Red-black Tree\"" << endl;
         visualize_walk(root, os);
         os << "}";
 
