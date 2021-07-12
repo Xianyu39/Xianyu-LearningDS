@@ -79,8 +79,8 @@ private:
     */
     Node() : color(RED), key(), left(nullptr), right(nullptr), parent(nullptr), id() {
         stringstream ss;
-        // ss << "n" << getID();
-        ss << "n" << key;
+        ss << "n" << getID();
+        // ss << "n" << key;
         id = ss.str();
     }
     /**
@@ -89,8 +89,8 @@ private:
     */
     Node(const Tp& key) :key(key), color(RED), left(nullptr), id() {
         stringstream ss;
-        // ss << "n" << getID();
-        ss << "n" << key;
+        ss << "n" << getID();
+        // ss << "n" << key;
         id = ss.str();
     }
     /**
@@ -99,8 +99,8 @@ private:
     */
     Node(Tp&& key) :key(key), color(RED), left(nullptr), id() {
         stringstream ss;
-        // ss << "n" << getID();
-        ss << "n" << key;
+        ss << "n" << getID();
+        // ss << "n" << key;
         id = ss.str();
     }
 };
@@ -298,7 +298,7 @@ public:
 
     Node<Tp>* backNode(Node<Tp>* key) {
         if (key->right != &nil) {
-            Node<Tp>* p = key;
+            Node<Tp>* p = key->right;
             while (p->left != &nil) { p = p->left; }
             return p;
         }
@@ -316,56 +316,139 @@ public:
         // Transform key to node*
         Node<Tp>* target = find(key);
         if (target == &nil) { throw "Delete value is not found."; }
-
-        // rmv_val is the name of the truly deleted node.
-        Node<Tp>* rmv_val;
-
-        // Distinguish case 1,2 and case 3.
-        if (target->left != &nil && target->right != &nil) { rmv_val = backNode(target); }
-        else { rmv_val = target; }
-
-        // Remove rmv_val from the tree.
-        Node<Tp>* child;
-        if (rmv_val->left != &nil) { child = rmv_val->left; }
-        else { child = rmv_val->right; }
-        if (child != &nil) { child->parent = rmv_val->parent; }
-
-        if (rmv_val->parent == &nil) { root = child; }
-        else if (rmv_val == rmv_val->parent->left) { rmv_val->parent->left = child; }
-        else { rmv_val->parent->right = child; }
-
-        // Case 3
-        if (rmv_val != target) {
-            target->key = rmv_val->key;
-            target->id = rmv_val->id;
-            target->num = rmv_val->num;
-            target->color = rmv_val->color;
-        }
-
-        // fix
-        if (rmv_val->color == BLACK) { DeleteFixup(child); }
-
-        delete rmv_val;
+        rmv_node(target);
     }
 
-    void DeleteFixup(Node<Tp>* key) {
-        while (key != root && key->color == BLACK) {
-            if (key == key->parent->left) {
-                Node<Tp>* brother = key->parent->right;
-                if (brother->color == RED) {
-                    
+    void rmv_node(Node<Tp>* target) {
+        // Case 1: target is leaf.
+        if (target->left == &nil && target->right == &nil) {
+            RemoveFixup(target);
+            if (target->parent->left == target) {
+                target->parent->left = &nil;
+            }
+            else {
+                target->parent->right = &nil;
+            }
+            delete target;
+        }
+        // Case 2: target has only one child.
+        else if (target->left != &nil ^ target->right != &nil) {
+            if (target->left != &nil) {
+                // target->id = target->left->id;
+                target->key = target->left->key;
+                target->num = target->left->num;
+
+                rmv_node(target->left);
+            }
+            else {
+                // target->id = target->right->id;
+                target->key = target->right->key;
+                target->num = target->right->num;
+
+                rmv_node(target->right);
+            }
+        }
+        // Case 3: target has 2 children.
+        else {
+            Node<Tp>* bk = backNode(target);
+            // target->id = bk->id;
+            target->key = bk->key;
+            target->num = bk->num;
+
+            rmv_node(bk);
+        }
+    }
+
+    /**
+      *@brief Keeping RB nature of the RBTree before removing the node.
+      *@param nNode: Pointer to the node that waiting to be removed, which are required to be the leaf.
+     */
+    void RemoveFixup(Node<Tp>* nNode) {
+        // Case 1: Nothing needs to be done.
+        if (nNode->color == RED) { return; }
+        // Case 2
+        else {
+            // Case 2.1
+            if (nNode->parent->left == nNode) {
+                Node<Tp>* sibling = nNode->parent->right;
+                // Case 2.1.1
+                if (sibling->color == BLACK) {
+                    // Case 2.1.1.1
+                    if (sibling->right->color == RED) {
+                        sibling->color = sibling->parent->color;
+                        sibling->parent->color = BLACK;
+                        LeftRotate(nNode->parent);
+
+                        return;
+                    }
+                    // Case 2.1.1.2 & 2.1.1.3
+                    else {
+                        // Case 2.1.1.2
+                        if (sibling->left->color == RED) {
+                            sibling->color = RED;
+                            sibling->left->color == BLACK;
+                            RightRotate(sibling);
+
+                            // To case 2.1.1.1
+                            sibling->color = sibling->parent->color;
+                            sibling->parent->color = BLACK;
+                            LeftRotate(nNode->parent);
+
+                            return;
+                        }
+                        // Case 2.1.1.3
+                        else {
+                            sibling->color = RED;
+                            RemoveFixup(sibling->parent);
+                        }
+                    }
+                }
+                // Case 2.1.2
+                else {
+                    sibling->color = BLACK;
+                    sibling->parent->color = RED;
+                    LeftRotate(sibling->parent);
+
+                    RemoveFixup(nNode);
                 }
             }
-            else{}
-        }
+            // Case 2.2: just like 2.1
+            else {
+                Node<Tp>* sibling = nNode->parent->left;
+                if (sibling->color == BLACK) {
+                    if (sibling->left->color == RED) {
+                        sibling->color = sibling->parent->color;
+                        sibling->parent->color = BLACK;
+                        sibling->left->color = BLACK;
+                        RightRotate(sibling->parent);
+                    }
+                    else {
+                        if (sibling->right->color == RED) {
+                            sibling->color = RED;
+                            sibling->right->color = BLACK;
+                            LeftRotate(sibling);
+                        }
+                        else {
+                            sibling->color = RED;
+                            RemoveFixup(sibling->parent);
+                        }
+                    }
+                }
+                else {
+                    sibling->color = BLACK;
+                    sibling->parent->color = RED;
+                    RightRotate(sibling->parent);
 
-        key->color = BLACK;
+                    RemoveFixup(nNode);
+                }
+            }
+        }
     }
 
     void test() {
         // Pre successor
-        // remove(19);
-        
+        remove(12);
+
         // Visualizing script.
         std::ofstream os;
         // LeftRotate(root->right);

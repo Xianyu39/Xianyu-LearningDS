@@ -1,44 +1,28 @@
 digraph {
 	label="Red-black Tree"
-	n19[style="filled",fillcolor="black", fontcolor=white,label="19"]
-	n8[style="filled",fillcolor="red", fontcolor=white,label="8"]
-	n19->n8
-	n6[style="filled",fillcolor="black", fontcolor=white,label="6"]
-	n8->n6
-	n3[style="filled",fillcolor="red", fontcolor=white,label="3"]
-	n6->n3
+	n5[style="filled",fillcolor="black", fontcolor=white,label="7"]
+	n4[style="filled",fillcolor="black", fontcolor=white,label="6"]
+	n5->n4
+	n7[style="filled",fillcolor="red", fontcolor=white,label="3"]
+	n4->n7
 	nil0[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n3->nil0[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n7->nil0[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 	nil1[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n3->nil1[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n7[style="filled",fillcolor="red", fontcolor=white,label="7"]
-	n6->n7
+	n7->nil1[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 	nil2[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n7->nil2[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n4->nil2[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n1[style="filled",fillcolor="red", fontcolor=white,label="19"]
+	n5->n1
+	n6[style="filled",fillcolor="black", fontcolor=white,label="9"]
+	n1->n6
+	n3[style="filled",fillcolor="red", fontcolor=white,label="8"]
+	n6->n3
 	nil3[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n7->nil3[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n12[style="filled",fillcolor="black", fontcolor=white,label="12"]
-	n8->n12
-	n9[style="filled",fillcolor="red", fontcolor=white,label="9"]
-	n12->n9
+	n3->nil3[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 	nil4[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n9->nil4[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n3->nil4[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 	nil5[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n9->nil5[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n6->nil5[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 	nil6[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n12->nil6[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n38[style="filled",fillcolor="red", fontcolor=white,label="38"]
-	n19->n38
-	n31[style="filled",fillcolor="black", fontcolor=white,label="31"]
-	n38->n31
-	nil7[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n31->nil7[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	nil8[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n31->nil8[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n0[style="filled",fillcolor="black", fontcolor=white,label="41"]
-	n38->n0
-	nil9[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n0->nil9[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	nil10[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
-	n0->nil10[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
+	n1->nil6[style="filled",fillcolor="black", shape=box, fontcolor=white, width=0.4, height=0.2,label="NIL"]
 }
