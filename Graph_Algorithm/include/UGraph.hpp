@@ -20,7 +20,7 @@ private:
     size_t size;
 
 public:
-    static const unsigned int MAX{11};
+    static const unsigned int MAX{100};
     enum class Mode { DIRECTED, UN_DIRECTED };
 
     UGraph();
